@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portafolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Fran's Portfolio</h1>
+    </header>
+    
+
+    <div class="card">
+        <div>
+            <p>
+                About Me:
+                <br><br>
+                I am a 17-year-old young man about to turn 18 with many ideas in mind and already with a career focused on my future. I am currently making commissions on ROBLOX platform where I am able to do things like Building and Modeling 3D. 
+                <br><br>
+                I hope you like my portfolio (This portfolio is updated all the time I do a construction or design).
+                <br><br>
+                I am currently free to work on any commission or full-time job. You can contact me on Discord, my tag is: 
+                <span class="highlight">srfran_01</span>
+                <br><br>
+                Here I leave my ROBLOX profile:
+                <a href="https://www.roblox.com/users/1097207153/profile" target="_blank" class="link">My ROBLOX Profile</a>
+            </p>
+            
+        </div>
+    </div>
+    
+
+    <div class="container">
+        <!-- Sección 1 -->
+        <div class="section">
+            <h2>VAMPEZ - HOMESTORE</h2>
+            <div class="gallery">
+                <img src="imagenes/Realista/homestore1.png" alt="VAMPEZ - HOMESTORE 1">
+                <img src="imagenes/Realista/homestore2.png" alt="VAMPEZ - HOMESTORE 2">
+                <img src="imagenes/Realista/homestore3.png" alt="VAMPEZ - HOMESTORE 3">
+                <img src="imagenes/Realista/homestore4.png" alt="VAMPEZ - HOMESTORE 4">
+                <img src="imagenes/Realista/homestore5.png" alt="VAMPEZ - HOMESTORE 5">
+                <img src="imagenes/Realista/homestore6.png" alt="VAMPEZ - HOMESTORE 6">
+                <img src="imagenes/Realista/homestore7.png" alt="VAMPEZ - HOMESTORE 7">
+            </div>
+        </div>
+
+        <!-- Sección 2 -->
+        <div class="section">
+            <h2>NATURE - HOMESTORE</h2>
+            <p>In this map only the plants are from TOOLBOX</p>
+            <div class="gallery">
+                <img src="imagenes/Realista/homestore8.png" alt="NATURE - HOMESTORE 1">
+                <img src="imagenes/Realista/homestore9.png" alt="NATURE - HOMESTORE 2">
+                <img src="imagenes/Realista/homestore10.png" alt="NATURE - HOMESTORE 3">
+                <img src="imagenes/Realista/homestore11.png" alt="NATURE - HOMESTORE 4">
+                <img src="imagenes/Realista/homestore12.png" alt="NATURE - HOMESTORE 5">
+                <img src="imagenes/Realista/homestore13.png" alt="NATURE - HOMESTORE 6">
+                <img src="imagenes/Realista/homestore14.png" alt="NATURE - HOMESTORE 7">
+                <img src="imagenes/Realista/homestore15.png" alt="NATURE - HOMESTORE 8">
+            </div>
+        </div>
+
+        <!-- Sección 3 -->
+        <div class="section">
+            <h2>Cinema</h2>
+            <div class="gallery">
+                <img src="imagenes/Realista/cinema1.png" alt="Cinema 1">
+                <img src="imagenes/Realista/cinema2.png" alt="Cinema 2">
+                <img src="imagenes/Realista/cinema3.png" alt="Cinema 3">
+            </div>
+        </div>
+
+         <!-- Sección 4 -->
+         <div class="section">
+            <h2>Future</h2>
+            <div class="gallery">
+                <img src="imagenes/Realista/future3.png" alt="Future 1">
+            </div>
+        </div>
+
+        <!-- Sección 5 -->
+        <div class="section">
+            <h2>Extra</h2>
+            <div class="gallery">
+                <img src="imagenes/Realista/extra1.jpg" alt="Extra 1">
+                <img src="imagenes/Realista/extra2.png" alt="Extra 2">
+                <img src="imagenes/Realista/extra3.png" alt="Extra 3">
+                <img src="imagenes/Realista/extra4.png" alt="Extra 4">
+            </div>
+        </div>
+    </div>
+
+    <div class="blender">
+        <!-- Sección 1 -->
+        <div class="section">
+            <h2>BLENDER</h2>
+            <div class="gallery">
+                <img src="imagenes/Blender/1.png" alt="BLENDER 1">
+                <img src="imagenes/Blender/11.png" alt="BLENDER 2">
+                <img src="imagenes/Blender/23.png" alt="BLENDER 3">
+                <img src="imagenes/Blender/124124.png" alt="BLENDER 4">
+                <img src="imagenes/Blender/Pack.png" alt="BLENDER 5">
+                <img src="imagenes/Blender/unknown (1).png" alt="BLENDER 6">
+                <img src="imagenes/Blender/unknown (2).png" alt="BLENDER 7">
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 My Portfolio - All rights reserved</p>
+        <p class="credits">This page was made by Fran (Muchiut)</p>
+    </footer>
+    
+   
+   
+    <!-- Modal para ampliar imágenes -->
+    <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImage">
+        <div id="caption"></div>
+    </div>
+
+    <script> // JavaScript
+        // Obtener elementos
+        const modal = document.getElementById("imageModal");
+        const modalImg = document.getElementById("modalImage");
+        const captionText = document.getElementById("caption");
+        const closeModal = document.querySelector(".close");
+
+        // Agregar evento a las imágenes
+        document.querySelectorAll(".gallery img").forEach(img => {
+            img.addEventListener("click", () => {
+                modal.style.display = "block";
+                modalImg.src = img.src;
+                captionText.textContent = img.alt;
+            });
+        });
+
+        // Cerrar modal
+        closeModal.addEventListener("click", () => {
+            modal.style.display = "none";
+        });
+
+        // Cerrar modal al hacer clic fuera de la imagen
+        window.addEventListener("click", (event) => {
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        });
+
+        // Zoom en la imagen del modal
+        let scale = 1;
+        modalImg.addEventListener("wheel", (event) => {
+            event.preventDefault();
+            scale += event.deltaY * -0.005; // Reducir velocidad del zoom
+            scale = Math.min(Math.max(.5, scale), 3); // Limitar zoom entre 0.5x y 3x
+            modalImg.style.transform = `scale(${scale})`;
+        });
+    </script>
+    
+    <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <img id="modalImage" class="modal-content" alt="">
+        <div class="navigation">
+            <span class="prev">&#10094;</span>
+            <span class="next">&#10095;</span>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,289 @@
+ body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #9e9b9b;
+        color: #333;
+    }
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+/* Contenedor principal */
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+/* Estilo de las secciones */
+.section {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.section h2 {
+    margin-bottom: 15px;
+    font-size: 1.8em;
+    color: #444;
+    text-transform: uppercase;
+    border-bottom: 2px solid #4caf50;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.section p {
+    margin: 10px 0 20px;
+    font-style: italic;
+    color: #666;
+}
+
+/* Galería de imágenes */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .section h2 {
+        font-size: 1.5em;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+
+    .section h2 {
+        font-size: 1.2em;
+    }
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+
+
+ /* Estilos para centrar la imagen en el modal */
+ .modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    max-width: 90%;
+    max-height: 90%;
+    transition: transform 0.3s ease;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#caption {
+    margin-top: 10px;
+    color: white;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+
+.card {
+    background-color: #f9f9f9; /* Fondo claro para contraste */
+    border: 1px solid #ddd;   /* Borde sutil */
+    border-radius: 10px;      /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para efecto de profundidad */
+    padding: 20px;            /* Espaciado interno */
+    margin: 20px auto;        /* Centrar y espaciar verticalmente */
+    max-width: 600px;         /* Ancho máximo para no desbordar */
+    font-family: Arial, sans-serif; /* Tipografía limpia */
+    line-height: 1.6;         /* Mejor legibilidad */
+}
+
+.card p {
+    color: #333;              /* Texto oscuro */
+    font-size: 16px;          /* Tamaño de fuente legible */
+    text-align: justify;      /* Justificar texto para alineación ordenada */
+}
+
+.card img {
+    size: 20px;
+}
+
+.highlight {
+    color: #007bff;           /* Color destacado para resaltar el Discord tag */
+    font-weight: bold;        /* Negrita para llamar la atención */
+}
+
+.link {
+    color: #28a745;           /* Color verde para el enlace */
+    text-decoration: none;    /* Sin subrayado */
+    font-weight: bold;        /* Enlace en negrita */
+    transition: color 0.3s ease; /* Transición suave al cambiar de color */
+}
+
+.link:hover {
+    color: #155724;           /* Cambia el color a verde más oscuro al pasar el mouse */
+}
+
+/* Estilo del modal */
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    max-width: 80%;
+    max-height: 80%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Botón cerrar */
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Flechas de navegación */
+.navigation {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.prev, .next {
+    color: white;
+    font-size: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+    padding: 10px;
+}
+
+.prev:hover, .next:hover {
+    color: #f1c40f;
+}
+
+.gallery img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.section {
+    animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card, .gallery img {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+body {
+    background: linear-gradient(120deg, #8ea2e9, #21223d);
+    font-family: Arial, sans-serif;
+    color: #333;
+    font-family: 'Poppins', sans-serif;
+    color: #444;
+}
+
+header h1 {
+    color: #fcfcfc;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #333;
+    color: white;
+    margin-top: 30px;
+}
+
+footer .credits {
+    font-size: 0.9em; /* Tamaño más pequeño */
+    font-style: italic; /* Texto en cursiva */
+    color: #777; /* Color gris tenue */
+    margin-top: 10px;
+}
+
+.blender {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
